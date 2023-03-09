@@ -9,7 +9,7 @@ import {
 import { initCars } from "./pages/cars/cars.js"
 import { initMembers } from "./pages/members/members.js"
 import { initReservations } from "./pages/reservations/reservations.js"
-import { initFindCar } from "./pages/cars/findCar.js"
+import { initFindCar } from "./pages/cars/findcar.js"
 
 //starts the loading when the program is started
 window.addEventListener("load", async () => {
@@ -17,7 +17,7 @@ window.addEventListener("load", async () => {
   const templateAbout = await loadTemplate("./pages/about/about.html")
   const templateMembers = await loadTemplate("./pages/members/members.html")
   const templateCars = await loadTemplate("./pages/cars/cars.html")
-  const templateFindCar = await loadTemplate("./pages/cars/findCar.html")
+  const templateFindCar = await loadTemplate("./pages/cars/findcar.html")
   const templateReservations = await loadTemplate("./pages/reservations/reservations.html")
 
   const templateNotFound = await loadTemplate("./pages/notFound/notFound.html")
