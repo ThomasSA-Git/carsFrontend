@@ -1,4 +1,4 @@
-import {handleHttpErrors} from "../../utils.js"
+import {handleHttpErrors, sanitizeStringWithTableRows} from "../../utils.js"
 
 const URLcar = "http://localhost:9090/api/cars"
 
@@ -19,7 +19,8 @@ try{
       <td>${car.model}</td>
       <td>${car.pricePrDay}</td>
     </tr>`).join("")
-    document.getElementById("tbl-body").innerHTML = tableRows
+    const okRows = sanitizeStringWithTableRows(tableRows)
+    document.getElementById("tbl-body").innerHTML = okRows
   } catch (err) {
     //Like this if you only need the "message"
 console.log(err.message)

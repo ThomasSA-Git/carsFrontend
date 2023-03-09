@@ -9,7 +9,7 @@ import {
 import { initCars } from "./pages/cars/cars.js"
 import { initMembers } from "./pages/members/members.js"
 import { initReservations } from "./pages/reservations/reservations.js"
-//import { initFindCar } from "./pages/cars/findCar.js"
+import { initFindCar } from "./pages/cars/findCar.js"
 
 //starts the loading when the program is started
 window.addEventListener("load", async () => {
@@ -17,7 +17,7 @@ window.addEventListener("load", async () => {
   const templateAbout = await loadTemplate("./pages/about/about.html")
   const templateMembers = await loadTemplate("./pages/members/members.html")
   const templateCars = await loadTemplate("./pages/cars/cars.html")
-  //const templateFindCar = await loadTemplate("./pages/cars/findCar.html")
+  const templateFindCar = await loadTemplate("./pages/cars/findCar.html")
   const templateReservations = await loadTemplate("./pages/reservations/reservations.html")
 
   const templateNotFound = await loadTemplate("./pages/notFound/notFound.html")
@@ -40,10 +40,10 @@ window.addEventListener("load", async () => {
     .on({
       //For very simple "templates", you can just insert your HTML directly like below
       "/": () => document.getElementById("content").innerHTML =
-        `<h2>Home</h2>
+        `<h2>Cars</h2>
       <p style='margin-top:2em'>
-      This is the content of the Home Route <br/>
-      Observe that this is so simple that all HTML is added in the on-handler for the route. 
+      Welcome to my cars app <br/>
+      Choose different functions on navbar. Site still under construction
       </p>
      `,
       "/about": () => renderTemplate(templateAbout, "content"),
@@ -58,7 +58,7 @@ window.addEventListener("load", async () => {
       },
       "/find-car": (match) => {
         renderTemplate(templateFindCar, "content")
-        initFindCar(match)
+        initFindCar()
       },
 
       "/navigate-programatically": () => {
