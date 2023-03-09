@@ -56,7 +56,7 @@ window.addEventListener("load", async () => {
         renderTemplate(templateMembers, "content")
         initMembers()
       },
-      "/find-car": (match) => {
+      "/find-car": () => {
         renderTemplate(templateFindCar, "content")
         initFindCar()
       },
