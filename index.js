@@ -10,6 +10,7 @@ import { initCars } from "./pages/cars/cars.js"
 import { initMembers } from "./pages/members/members.js"
 import { initReservations } from "./pages/reservations/reservations.js"
 import { initFindCar } from "./pages/cars/findcar.js"
+import { initaddcar } from "./pages/cars/addcar.js"
 
 //starts the loading when the program is started
 window.addEventListener("load", async () => {
@@ -18,7 +19,9 @@ window.addEventListener("load", async () => {
   const templateMembers = await loadTemplate("./pages/members/members.html")
   const templateCars = await loadTemplate("./pages/cars/cars.html")
   const templateFindCar = await loadTemplate("./pages/cars/findcar.html")
+  const templateaddcar = await loadTemplate("./pages/cars/addcar.html")
   const templateReservations = await loadTemplate("./pages/reservations/reservations.html")
+  
 
   const templateNotFound = await loadTemplate("./pages/notFound/notFound.html")
 
@@ -60,8 +63,11 @@ window.addEventListener("load", async () => {
         renderTemplate(templateFindCar, "content")
         initFindCar()
       },
-
-      "/navigate-programatically": () => {
+      "/add-car": () => {
+        renderTemplate(templateaddcar, "content")
+        initaddcar()
+      },
+      "/reservations": () => {
         renderTemplate(templateReservations, "content")
         initReservations()
       },
