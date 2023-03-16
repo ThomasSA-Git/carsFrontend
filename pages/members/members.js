@@ -1,6 +1,7 @@
 import {handleHttpErrors, sanitizeStringWithTableRows} from "../../utils.js"
+import {API_URL} from "../../settings.js"
 
-const URLmembers = "http://localhost:9090/api/members"
+const URLmembers = API_URL + "/members"
 
 export async function initMembers() {
   document.getElementById("tbl-body").onclick = showMemberDetails

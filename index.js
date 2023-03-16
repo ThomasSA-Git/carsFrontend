@@ -11,6 +11,7 @@ import { initMembers } from "./pages/members/members.js"
 import { initReservations } from "./pages/reservations/reservations.js"
 import { initFindCar } from "./pages/cars/findcar.js"
 import { initaddcar } from "./pages/cars/addcar.js"
+import {initLogin, initLogout} from "./pages/login/login.js"
 
 //starts the loading when the program is started
 window.addEventListener("load", async () => {
@@ -21,10 +22,12 @@ window.addEventListener("load", async () => {
   const templateFindCar = await loadTemplate("./pages/cars/findcar.html")
   const templateaddcar = await loadTemplate("./pages/cars/addcar.html")
   const templateReservations = await loadTemplate("./pages/reservations/reservations.html")
+  //const templateLogin = await loadTemplate(".pages/login/login.html")
   
 
   const templateNotFound = await loadTemplate("./pages/notFound/notFound.html")
-
+  initLogin()
+  initLogout()
 
   adjustForMissingHash()
 

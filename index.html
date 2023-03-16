@@ -101,11 +101,14 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" placeholder="username" aria-label="login">
-        <input class="form-control me-2" placeholder="password" aria-label="login">
-        <button class="btn btn-dark" type="submit">Login</button>
-      </form>
+      <div id="loginform" class="d-flex">
+        <div id="input-fields">
+        <input id="username-input" class="form-control me-2" placeholder="Username" type="text">
+        <input id="password-input" class="form-control me-2" placeholder="Password" type="password">
+      </div>
+        <button id="login-btn" class="btn btn-dark">Login</button>
+      </div>
+      <button id="logout-btn" style="display: none;" class="btn btn-danger">Logout</button>
     </div>
   </div>
 </nav>

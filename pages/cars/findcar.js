@@ -1,6 +1,6 @@
 import { handleHttpErrors } from "../../utils.js"
-
-const URLcar = "http://localhost:9090/api/cars"
+import {API_URL} from "../../settings.js"
+const URLcar = API_URL + "/cars"
 
 export async function initFindCar() {
    const btnSingleCar = document.getElementById("find-car")

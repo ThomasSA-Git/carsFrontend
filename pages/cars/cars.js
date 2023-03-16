@@ -1,6 +1,7 @@
 import {handleHttpErrors, sanitizeStringWithTableRows} from "../../utils.js"
+import {API_URL} from "../../settings.js"
 
-const URLcar = "http://localhost:9090/api/cars"
+const URLcar = API_URL + "/cars"
 
 export async function initCars() {
   getAllCars()
