@@ -12,6 +12,7 @@ import { initReservations } from "./pages/reservations/reservations.js"
 import { initFindCar } from "./pages/cars/findcar.js"
 import { initaddcar } from "./pages/cars/addcar.js"
 import {initLogin, initLogout} from "./pages/login/login.js"
+import { initFindMember } from "./pages/members/findmember.js"
 
 //starts the loading when the program is started
 window.addEventListener("load", async () => {
@@ -22,6 +23,7 @@ window.addEventListener("load", async () => {
   const templateFindCar = await loadTemplate("./pages/cars/findcar.html")
   const templateaddcar = await loadTemplate("./pages/cars/addcar.html")
   const templateReservations = await loadTemplate("./pages/reservations/reservations.html")
+  const templateFindMember = await loadTemplate("./pages/members/findmember.html")
   //const templateLogin = await loadTemplate(".pages/login/login.html")
   
 
@@ -46,11 +48,16 @@ window.addEventListener("load", async () => {
     .on({
       //For very simple "templates", you can just insert your HTML directly like below
       "/": () => document.getElementById("content").innerHTML =
-        `<h2>Cars</h2>
+        `<div class="container">
+        <h2>Home</h2>
       <p style='margin-top:2em'>
-      Welcome to my cars app <br/>
-      Choose different functions on navbar. Site still under construction
+      Welcome to my cars app <br>
+      Choose different functions on navbar. <br>
+      Site still under construction
+      <br>
+      <img display: inline-block; src="./carpicture.jpg" alt="" width="481" height="320">
       </p>
+      </div>
      `,
       "/about": () => renderTemplate(templateAbout, "content"),
 
@@ -73,6 +80,10 @@ window.addEventListener("load", async () => {
       "/reservations": () => {
         renderTemplate(templateReservations, "content")
         initReservations()
+      },
+      "/findmember": () => {
+        renderTemplate(templateFindMember, "content")
+        initFindMember()
       },
     })
     .notFound(() => {

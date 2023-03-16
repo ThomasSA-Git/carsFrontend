@@ -10,10 +10,16 @@ export async function initCars() {
   
   async function getAllCars(){
 try{
-    const car = await fetch(URLcar)
+  document.getElementById("error").innerText = ""
+  const options = {
+    method: "GET",
+    headers: { "Authorization": "Bearer " + localStorage.getItem("token")}
+  }  
+  
+  const cars = await fetch(URLcar, options)
     .then(handleHttpErrors)
-    console.log(car)
-    const tableRows = car.map(car => 
+    console.log(cars)
+    const tableRows = cars.map(car => 
       `<tr>
       <td>${car.id}</td>
       <td>${car.brand}</td>
@@ -25,6 +31,7 @@ try{
   } catch (err) {
     //Like this if you only need the "message"
 console.log(err.message)
+document.getElementById("error").innerText = err.message
     //Like this if you need all properties from the error response
 
   }

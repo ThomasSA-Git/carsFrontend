@@ -21,6 +21,7 @@ function logout(){
     window.router.navigate("")
     document.getElementById("username-input").value = ""
     document.getElementById("password-input").value = ""
+    document.getElementById("welcome-text").innerText = ""
 }
 
 async function login(evt){
@@ -50,6 +51,7 @@ async function login(evt){
     document.getElementById("login-btn").style.display = "none"
     document.getElementById("input-fields").style.display = "none"
     document.getElementById("logout-btn").style.display = "block"
+    document.getElementById("welcome-text").innerText = "Welcome " + response.username
 
     window.router.navigate("")
 }

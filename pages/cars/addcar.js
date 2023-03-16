@@ -31,7 +31,7 @@ try{
     const car = await fetch(URLcar, {
   method: 'POST',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json', "Authorization": "Bearer " + localStorage.getItem("token")
   },
   body: JSON.stringify(data)
 })
@@ -44,5 +44,5 @@ console.log(err.message)
     //Like this if you need all properties from the error response
 
   }
- 
+  window.router.navigate("/cars")
 }

@@ -12,7 +12,12 @@ getAllMembers()
   
   async function getAllMembers(){
 try{
-    const members = await fetch(URLmembers)
+  const options = {
+    method: "GET",
+    headers: { "Authorization": "Bearer " + localStorage.getItem("token")}
+  }  
+
+    const members = await fetch(URLmembers, options)
     .then(handleHttpErrors)
     console.log(members)
     const tableRows = members.map(member => 
@@ -30,7 +35,7 @@ try{
     //Like this if you only need the "message"
 console.log(err.message)
     //Like this if you need all properties from the error response
-
+    document.getElementById("error").innerText = err.message
   }
     }
 
